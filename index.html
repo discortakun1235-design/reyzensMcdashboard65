@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReyzensMC Official</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #000; color: white; padding: 15px; overflow-x: hidden; }
+        .bento-card { background: #111; border-radius: 35px; padding: 25px; margin-bottom: 20px; }
+
+        .profile-container { display: flex; flex-direction: column; align-items: center; text-align: center; }
+        .loader-frame { position: relative; width: 120px; height: 120px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px; }
+        .loader-frame::before {
+            content: ""; position: absolute; width: 100%; height: 100%; border-radius: 50%;
+            border: 3px solid transparent; border-top-color: #ff0000; border-bottom-color: #ff0000;
+            animation: spin 2s linear infinite;
+        }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+        .p-box { width: 90px; height: 90px; background: #000; border-radius: 50%; overflow: hidden; z-index: 1; border: 2px solid #111; }
+        #p-img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+
+        .social-wrapper { display: flex; gap: 12px; justify-content: center; margin-top: 25px; width: 100%; }
+        .social-circle { width: 45px; height: 45px; background: white; color: black; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; transition: 0.3s; }
+        .social-circle:hover { transform: translateY(-5px); }
+
+        .join-btn { background: #5865F2; color: white; width: 100%; padding: 15px; border-radius: 20px; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 20px; text-decoration: none; }
+
+        .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 20px; }
+        .stat-box { background: #111; padding: 20px 5px; border-radius: 30px; text-align: center; }
+
+        .rank-item { display: flex; align-items: center; gap: 12px; background: #111; padding: 15px; border-radius: 25px; margin-bottom: 10px; border-left-width: 4px; }
+        .rank-img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; }
+
+        .scroll-container { display: flex; overflow-x: auto; gap: 12px; padding-bottom: 10px; scrollbar-width: none; }
+        .scroll-container::-webkit-scrollbar { display: none; }
+        .sched-card { min-width: 130px; background: #1a1a1a; padding: 20px; border-radius: 25px; border-bottom: 5px solid #ff0000; flex-shrink: 0; }
+
+        .gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .gallery-item { aspect-ratio: 1/1; background: #1a1a1a; border-radius: 25px; overflow: hidden; }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+        .add-btn { border: 2px dashed #333; display: flex; align-items: center; justify-content: center; font-size: 30px; color: #ff0000; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <div class="max-w-sm mx-auto">
+        <div class="bento-card">
+            <div class="profile-container">
+                <div class="loader-frame">
+                    <div class="p-box">
+                        <img id="p-img" src="https://cdn.discordapp.com/attachments/1443192319984537602/1462302904672325786/Screenshot_2026-01-18-11-20-15-04.jpg?ex=696db334&is=696c61b4&hm=0c7f4d0d325efbcde626163d944cfee4b51733bbf677ff6fda34a78088a0ebe7&">
+                    </div>
+                </div>
+                <h1 class="text-3xl font-black italic tracking-tight">ReyzensMC</h1>
+                <p class="text-[10px] opacity-40 font-bold mt-1 uppercase tracking-widest">Content Creator</p>
+                
+                <div class="social-wrapper">
+                    <div class="social-circle"><i class="fab fa-youtube"></i></div>
+                    <div class="social-circle"><i class="fab fa-tiktok"></i></div>
+                    <div class="social-circle"><i class="fab fa-discord"></i></div>
+                    <div class="social-circle"><i class="fas fa-shopping-bag"></i></div>
+                    <div class="social-circle"><i class="fas fa-heart"></i></div>
+                </div>
+            </div>
+
+            <a href="https://discord.gg/vefbSuazGV" target="_blank" class="join-btn">
+                <i class="fab fa-discord"></i> JOIN COMMUNITY
+            </a>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-box"><i class="fab fa-youtube text-red-600 mb-2"></i><p class="text-lg font-black leading-none">1.533</p><p class="text-[8px] opacity-40 uppercase font-bold mt-1">Subscribe</p></div>
+            <div class="stat-box"><i class="fab fa-tiktok mb-2 text-white"></i><p class="text-lg font-black leading-none">300</p><p class="text-[8px] opacity-40 uppercase font-bold mt-1">Followers</p></div>
+            <div class="stat-box"><i class="fas fa-eye text-blue-500 mb-2"></i><p class="text-lg font-black leading-none">313.7rb</p><p class="text-[8px] opacity-40 uppercase font-bold mt-1">View</p></div>
+        </div>
+
+        <div class="bento-card">
+            <h2 class="text-xs font-bold mb-5 opacity-20 uppercase tracking-[0.3em]">Top Viewers</h2>
+            
+            <div class="rank-item border-yellow-500">
+                <i class="fas fa-crown text-yellow-500"></i>
+                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=1" class="rank-img">
+                <div class="flex-1"><p class="text-sm font-bold">@Unknown</p></div>
+            </div>
+
+            <div class="rank-item border-gray-400">
+                <i class="fas fa-crown text-gray-300"></i>
+                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=2" class="rank-img">
+                <div class="flex-1"><p class="text-sm font-bold">@Unknown</p></div>
+            </div>
+
+            <div class="rank-item border-orange-700">
+                <i class="fas fa-crown text-orange-600"></i>
+                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=3" class="rank-img">
+                <div class="flex-1"><p class="text-sm font-bold">@Unknown</p></div>
+            </div>
+        </div>
+
+        <div class="bento-card">
+            <h2 class="text-xs font-bold mb-4 opacity-20 uppercase tracking-[0.3em]">Live Schedule</h2>
+            <div class="scroll-container">
+                <div class="sched-card"><p class="text-[9px] font-black text-red-500 uppercase">Senin</p><p class="text-sm font-bold">Minecraft</p></div>
+                <div class="sched-card"><p class="text-[9px] font-black text-red-500 uppercase">Selasa</p><p class="text-sm font-bold">Roblox</p></div>
+                <div class="sched-card"><p class="text-[9px] font-black text-red-500 uppercase">Rabu</p><p class="text-sm font-bold">Free Fire</p></div>
+            </div>
+        </div>
+
+        <div class="bento-card">
+            <h2 class="text-xs font-bold mb-5 opacity-20 uppercase tracking-[0.3em]">Galeri</h2>
+            <div id="gal-container" class="gallery-grid">
+                <div class="gallery-item"><img src="https://picsum.photos/seed/a/400/400"></div>
+                <div class="gallery-item"><img src="https://picsum.photos/seed/b/400/400"></div>
+                <div class="gallery-item add-btn" onclick="document.getElementById('file-gal').click()">
+                    <i class="fas fa-plus"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <input type="file" id="file-gal" style="display:none" accept="image/*" onchange="addPhoto(this)">
+
+    <script>
+        function addPhoto(input) {
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const container = document.getElementById('gal-container');
+                    const addBtn = container.querySelector('.add-btn');
+                    const newDiv = document.createElement('div');
+                    newDiv.className = 'gallery-item';
+                    newDiv.innerHTML = `<img src="${e.target.result}">`;
+                    container.insertBefore(newDiv, addBtn);
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+</body>
+</html>
